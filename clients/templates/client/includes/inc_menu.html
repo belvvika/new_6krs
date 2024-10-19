@@ -1,5 +1,7 @@
 {% load static %}
 <!doctype html>
+<html lang="ru" data-bs-theme="auto">
+
 <div class="collapse text-bg-dark" id="navbarHeader">
         <div class="container">
             <div class="row">
@@ -12,7 +14,7 @@
                     <ul class="list-unstyled">
                         <li><a href="{% url 'clients:newsletter_list' %}" class="text-white">Главная</a></li>
                         {% if user.is_authenticated %}
-                         <li><a href="{% url 'users:logout' %}" class="text-white">Выход</a></li>
+                        <li><a href="{% url 'users:logout' %}" class="text-white">Выход</a></li>
                         <li><a href="{% url 'client:client_list' %}" class="text-white">Клиенты</a></li>
                         <li><a href="{% url 'client:message_list' %}" class="text-white">Сообщения</a></li>
                         <li><a href="{% url 'users:profile' user.pk %}" class="text-white">Профиль</a></li>

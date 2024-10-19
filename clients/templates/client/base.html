@@ -44,7 +44,14 @@
                     <a href="{% url 'client:message_create' %}" class="btn btn-primary my-2"> Создать сообщение</a>
                     <a href="{% url 'client:client_create' %}" class="btn btn-primary my-2"> Добавить клиентов</a>
                     <a href="{% url 'client:mailing_create' %}" class="btn btn-primary my-2"> Настроить рассылку</a>
+                    {% else %}
+                    <a href="{% url 'users:login' %}" class="text-white">Вход</a>
+                    <a href="{% url 'users:register' %}" class="text-white">Регистрация</a>
                     {% endif %}
+                    {% if perms.users.is_active or user == is_superuser %}
+                    <a href="{% url 'users:user_list' %}" class="text-white">Пользователи</a>
+                    {% endif %}
+
                 </p>
             </div>
         </div>
