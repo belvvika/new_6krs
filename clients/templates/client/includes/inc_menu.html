@@ -14,17 +14,20 @@
                     <ul class="list-unstyled">
                         <li><a href="{% url 'clients:newsletter_list' %}" class="text-white">Главная</a></li>
                         {% if user.is_authenticated %}
-                        <li><a href="{% url 'users:logout' %}" class="text-white">Выход</a></li>
-                        <li><a href="{% url 'client:client_list' %}" class="text-white">Клиенты</a></li>
-                        <li><a href="{% url 'client:message_list' %}" class="text-white">Сообщения</a></li>
-                        <li><a href="{% url 'users:profile' user.pk %}" class="text-white">Профиль</a></li>
-                        <li><a href="{% url 'client:log_list' %}" class="text-white">Логи</a></li>
+                            <li><form method="POST" action="{% url 'users:logout' %}" style="display:inline;">
+                                    {% csrf_token %}
+                                    <button type="submit" class="text-white">Выход</button>
+                            </form></li>
+                            <li><a href="{% url 'clients:client_list' %}" class="text-white">Клиенты</a></li>
+                            <li><a href="{% url 'clients:message_list' %}" class="text-white">Сообщения</a></li>
+                            <li><a href="{% url 'users:profile' user.pk %}" class="text-white">Профиль</a></li>
+                            <li><a href="{% url 'clients:mailingattempt_list' %}" class="text-white">Логи</a></li>
                         {% else %}
-                        <li><a href="{% url 'users:login' %}" class="text-white">Вход</a></li>
-                        <li><a href="{% url 'users:register' %}" class="text-white">Регистрация</a></li>
+                            <li><a href="{% url 'users:login' %}" class="text-white">Вход</a></li>
+                            <li><a href="{% url 'users:register' %}" class="text-white">Регистрация</a></li>
                         {% endif %}
                         {% if perms.users.is_active or user == is_superuser %}
-                        <li><a href="{% url 'users:user_list' %}" class="text-white">Пользователи</a></li>
+                            <li><a href="{% url 'users:user_list' %}" class="text-white">Пользователи</a></li>
                         {% endif %}
                     </ul>
                 </div>
