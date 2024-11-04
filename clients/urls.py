@@ -14,8 +14,8 @@ urlpatterns = [
     path('', cache_page(60)(NewsletterListView.as_view()), name='newsletter_list'),
     path('create/', NewsletterCreateView.as_view(), name='newsletter_create'),
     path('detail/<int:pk>/', NewsletterDetailView.as_view(), name='newsletter_detail'),
-    path('update/<int:pk>/', NewsletterUpdateView.as_view(), name='newsletter_form'),
-    path('delete/<int:pk>/', NewsletterDeleteView.as_view(), name='newsletter_confirm_delete'),
+    path('update/<int:pk>/', NewsletterUpdateView.as_view(), name='newsletter_update'),
+    path('delete/<int:pk>/', NewsletterDeleteView.as_view(), name='newsletter_delete'),
 
     path('client/', ClientListView.as_view(), name='client_list'),
     path('client/create/', ClientCreateView.as_view(), name='client_create'),
@@ -26,8 +26,8 @@ urlpatterns = [
     path('message/', MessageListView.as_view(), name='message_list'),
     path('message/create/', MessageCreateView.as_view(), name='message_create'),
     path('message/detail/<int:pk>/', MessageDetailView.as_view(), name='message_detail'),
-    path('message/update/<int:pk>/', MessageUpdateView.as_view(), name='message_form'),
-    path('message/delete/<int:pk>/', MessageDeleteView.as_view(), name='message_confirm_delete'),
+    path('message/update/<int:pk>/', MessageUpdateView.as_view(), name='message_update'),
+    path('message/delete/<int:pk>/', MessageDeleteView.as_view(), name='message_delete'),
 
     path('log_list/', MailingAttemptListView.as_view(), name='mailingattempt_list')
 

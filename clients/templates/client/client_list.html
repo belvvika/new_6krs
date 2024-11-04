@@ -14,7 +14,7 @@
                     <p class="card-text mb-auto">{{ client.comment|truncatechars:100 }}</p>
                     <a class="btn btn-primary" href="{% url 'clients:client_detail' client.pk %}" role="button">Просмотр</a>
                 </div>
-                <a class="btn btn-danger mb-3" href="{% url 'clients:client_confirm_delete' client.pk %}" role="button">Удалить</a>
+                <a class="btn btn-danger mb-3" href="{% url 'clients:delete' client.pk %}" role="button">Удалить</a>
             </div>
         </div>
         {% endif %}
