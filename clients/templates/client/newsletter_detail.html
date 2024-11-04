@@ -15,10 +15,10 @@
                         <p class="text-md-start">Клиент: {{client.email}}</p>
                     {% endfor %}
                     <p class="text-md-start">Статус: {{ object.get_status_display | capfirst }}</p>
-                    <a class="btn btn-primary mb-3" href="{% url 'client:mailing_update' object.pk %}" role="button">Редактировать</a>
-                    <a class="btn btn-primary mb-3" href="{% url 'client:mailing_list' %}" role="button">Назад</a>
+                    <a class="btn btn-primary mb-3" href="{% url 'clients:newsletter_form' object.pk %}" role="button">Редактировать</a>
+                    <a class="btn btn-primary mb-3" href="{% url 'clients:newsletter_list' %}" role="button">Назад</a>
                     {% if user == object.owner %}
-                    <a class="btn btn-danger mb-3" href="{% url 'client:mailing_delete' object.pk %}" role="button">Удалить</a>
+                    <a class="btn btn-danger mb-3" href="{% url 'clients:newsletter_confirm_delete' object.pk %}" role="button">Удалить</a>
                     {% endif %}
                     {% endif %}
                 </div>

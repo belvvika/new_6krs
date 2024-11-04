@@ -41,9 +41,9 @@
             <div class="col-lg-6 col-md-8 mx-auto">
                 <p>
                     {% if users.is_authenticated %}
-                    <a href="{% url 'client:message_create' %}" class="btn btn-primary my-2"> Создать сообщение</a>
-                    <a href="{% url 'client:client_create' %}" class="btn btn-primary my-2"> Добавить клиентов</a>
-                    <a href="{% url 'client:mailing_create' %}" class="btn btn-primary my-2"> Настроить рассылку</a>
+                    <a href="{% url 'clients:message_create' %}" class="btn btn-primary my-2"> Создать сообщение</a>
+                    <a href="{% url 'clients:client_create' %}" class="btn btn-primary my-2"> Добавить клиентов</a>
+                    <a href="{% url 'clients:mailing_create' %}" class="btn btn-primary my-2"> Настроить рассылку</a>
                     {% else %}
                     <a href="{% url 'users:login' %}" class="text-white">Вход</a>
                     <a href="{% url 'users:register' %}" class="text-white">Регистрация</a>

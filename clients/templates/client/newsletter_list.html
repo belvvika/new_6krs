@@ -24,7 +24,7 @@
                 <h4 class="my-0 font-weight-normal"> Статус: {{mailing.get_status_display}} </h4>
             </div>
             <div class="card-body">
-                <a class="btn btn-primary" href="{% url 'client:mailing_detail' mailing.pk %}"
+                <a class="btn btn-primary" href="{% url 'clients:newsletter_detail' mailing.pk %}"
                    role="button">Подробнее</a>
             </div>
         </div>

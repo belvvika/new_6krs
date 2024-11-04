@@ -10,10 +10,10 @@
                 <div class="card-body">
                     <p class="text-md-start"> {{object.body_letter | capfirst}}</p>
                 </div>
-                <a class="btn btn-primary mb-3" href="{% url 'client:message_list' %}" role="button">Назад</a>
-                <a class="btn btn-primary mb-3" href="{% url 'client:message_update' object.pk %}" role="button">Редактировать</a>
+                <a class="btn btn-primary mb-3" href="{% url 'clients:message_list' %}" role="button">Назад</a>
+                <a class="btn btn-primary mb-3" href="{% url 'clients:message_form' object.pk %}" role="button">Редактировать</a>
 
-                <a class="btn btn-danger" href="{% url 'client:message_delete' object.pk %}" role="button">Удалить</a>
+                <a class="btn btn-danger" href="{% url 'clients:message_confirm_delete' object.pk %}" role="button">Удалить</a>
             </div>
         </div>
     </div>

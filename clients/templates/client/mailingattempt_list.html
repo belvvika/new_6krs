@@ -2,12 +2,12 @@
 {% block content %}
 
 <div class="container">
-
-    {% for object in object_list %}
-    <p>Клиент: {{ object.client }}</p>
-    <p>Время последней рассылки: {{ object.date_last_attemp }}</p>
-    <p>Статус: {{ object.status }}</p>
-    {% endfor %}
+    <div class="row">
+        {% for object in object_list %}
+            <p>Клиент: {{ object.client }}</p>
+            <p>Время последней рассылки: {{ object.date_last_attemp }}</p>
+            <p>Статус: {{ object.status }}</p>
+        {% endfor %}
 
 </div>
 
